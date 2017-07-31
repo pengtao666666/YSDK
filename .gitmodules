@@ -1,0 +1,9 @@
+[submodule "deps/HJR_Common_Template"]
+	path = deps/HJR_Common_Template
+	url = git@git.techcenter.com:androidteam/hjr_common_template.git
+[submodule "deps/HJR_Common_Statistic"]
+	path = deps/HJR_Common_Statistic
+	url = git@git.techcenter.com:androidteam/hjr_common_statistic.git
+[submodule "project/sdkkitcoreproxy"]
+	path = project/sdkkitcoreproxy
+	url = git@git.techcenter.com:androidteam/sdkkitcoreproxy.git

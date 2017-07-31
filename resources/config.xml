@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<config>
+	<version v="1.3.1" />
+	<Fields>
+		
+		<field default="" extInfo="" inDev="0" inManifest="0" inProperties="1" key="qqAppId" label="手QAppId" require="1" showType="1" type="0" />
+		<field default="" extInfo="" inDev="0" inManifest="0" inProperties="0" key="qqAppKey" label="手QAppkey" require="1" showType="1" type="0" />
+		<field default="" extInfo="" inDev="0" inManifest="0" inProperties="1" key="weixinAppId" label="微信AppId" require="1" showType="1" type="0" />
+		<field default="" extInfo="" inDev="0" inManifest="0" inProperties="0" key="weixinAppKey" label="微信Appkey" require="1" showType="1" type="0" />
+		<field default="10" extInfo="" inDev="0" inManifest="0" inProperties="1" key="payRate" label="支付比例" require="1" showType="1" type="0" />
+		<field default="" extInfo="" inDev="0" inManifest="0" inProperties="0" key="payappkey" label="沙箱/现网appkey" require="1" showType="1" type="0" />
+		<field default="沙箱" extInfo="现网|沙箱" inDev="0" inManifest="0" inProperties="1" key="serverdebug" label="环境" require="1" showType="1" type="2" />
+		<field default="online" extInfo="offline|online" inDev="0" inManifest="0" inProperties="1" key="gameType" label="游戏类型" require="" showType="1" type="2" />
+		<field default="product" extInfo="debug|product" inDev="0" inManifest="0" inProperties="1" key="debugMode" label="正式模式" require="1" showType="1" type="2" />
+		<field default="" extInfo="" inDev="0" inManifest="0" inProperties="0" key="notifyUri" label="支付回调地址" require="" showType="1" type="0" />		
+		<field extInfo="左下角|左上角|右下角|右上角" showType="5" key="corner_icon" />
+	</Fields>
+	
+	<operateLs>
+        <operate from="ForManifest.xml" name="modifyManifest" to="AndroidManifest.xml" />
+        <operate from="ForAssets" name="copy" to="assets" />
+        <operate from="ForLibs" name="copy"  to="lib" />
+        <operate from="ForRes" name="copy" to="res" />
+	</operateLs>
+</config>

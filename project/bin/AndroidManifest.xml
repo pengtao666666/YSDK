@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tencent.tmgp.kfbb.snake"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="21" />
+    <!-- TODO GAME SDK接入必须权限模块 START -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- TODO GAME SDK Midas接入配置 设置屏幕兼容声明 START -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="ysdk_demo" >
+        <activity
+            android:name="com.gameworks.sdk.standard.core.test.MainActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.ysdk.module.realName.impl.RegisterRealNameActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <!-- TODO SDK接入 QQ接入配置 START -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1106160093" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- TODO SDK接入 QQ接入配置 END -->
+
+
+        <!-- TODO SDK接入 微信接入配置 START -->
+        <activity
+            android:name="com.tencent.tmgp.kfbb.snake.wxapi.WXEntryActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:label="WXEntryActivity"
+            android:launchMode="singleTop"
+            android:taskAffinity="com.tencent.tmgp.kfbb.snake.diff"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="wxb5ee28b408bbf5a8" />
+            </intent-filter>
+        </activity>
+
+        <!-- TODO GAME SDK Midas接入配置 START -->
+        <activity
+            android:name="com.tencent.midas.proxyactivity.APMidasPayProxyActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.tencent.midas.wx.APMidasWXPayActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.tencent.midas.qq.APMidasQQWalletActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="qwallet100703379" />
+                <!-- TODO GAME 这里为米大师的默认配置，游戏不要修改 -->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.midas.jsbridge.APWebJSBridgeActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <!-- TODO GAME SDK Midas接入配置 END -->
+        <!-- TODO SDK接入 微信接入配置 END -->
+        <meta-data
+            android:name="com.tencent.rdm.uuid"
+            android:value="4d294c24-2902-4ec3-98cb-70d33c12503e" />
+        <!-- 以下的是必须导入的Start -->
+        <meta-data
+            android:name="HJR_GAMEKEY"
+            android:value="f5320fc90b2a0e253cdd0d8204fa1f72" >
+        </meta-data>
+        <meta-data
+            android:name="HJR_CHANNEL"
+            android:value="\ 0103" >
+        </meta-data>
+        <meta-data
+            android:name="HJR_DATA_URL_DEBUG"
+            android:value="true" />
+        <!--
+        <meta-data
+            android:name="KUAIFA_CONFIG_URL"
+            android:value="http://test.z.kuaifazs.com" />
+        <meta-data
+            android:name="DATA_CONFIG_URL"
+            android:value="http://test.d.kuaifazs.com" />
+        -->
+        <!-- 以下的是必须导入的End -->
+
+    </application>
+
+</manifest>
